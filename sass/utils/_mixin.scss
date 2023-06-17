@@ -1,0 +1,73 @@
+@use "variables" as var;
+
+@mixin btn($padding: 10px 60px) {
+  padding: $padding;
+  border: 1px solid var.$outline;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+@mixin like($padding: 6px 5px) {
+  padding: $padding;
+  background-color: transparent;
+  &.liked {
+    background-color: red;
+  }
+}
+
+@mixin shopcart-btn($padding) {
+  @include btn($padding);
+  background-color: var.$white;
+  color: var.$outline;
+  &:hover {
+    border-color: var.$apelsin;
+    background-color: var.$apelsin;
+  }
+}
+
+@mixin secondary-btn {
+  @include btn;
+  background-color: var.$black;
+  color: var.$primary-color;
+  &:hover {
+    color: var.$white;
+  }
+}
+
+@mixin nav-btn {
+  @include primary-btn(20px 48px);
+}
+
+@mixin title($font, $weight, $size, $height, $color: var.$black) {
+  font-family: $font;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
+@mixin title-1 {
+  @include title("Rubik", 700, var.$h1, 150%, var.$black);
+}
+
+@mixin title-2 {
+  @include title("Rubik", 700, var.$h2, 150%, var.$black);
+}
+
+@mixin title-3 {
+  @include title("Rubik", 700, var.$h3, 150%, var.$black);
+}
+
+@mixin title-4 {
+  @include title("Rubik", 400, var.$h4, 150%, var.$grayscale-hardest);
+}
+
+@mixin title-5 {
+  @include title("Rubik", 400, var.$h5, 150%, var.$grayscale-light);
+}
