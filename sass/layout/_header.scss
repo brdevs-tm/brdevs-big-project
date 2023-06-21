@@ -1,7 +1,123 @@
-@use '../utils/mixin' as mixin;
+@use "../utils/mixin" as mixin;
 
 header {
-  button {
-    @include mixin.nav-btn;
+  background-color: #ffffff;
+  .navbar {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav__left {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      .logo__link {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        span {
+          @include mixin.title-3;
+        }
+      }
+      .goods__category {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        button {
+          background-color: #70c05b;
+          display: flex;
+          align-items: center;
+          border: 1px solid #70c05b;
+          border-radius: 4px;
+          gap: 40px;
+          padding: 13.5px 10.5px;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          span {
+            @include mixin.title-4-2;
+          }
+        }
+        input {
+          padding-top: 13.5px;
+          padding-bottom: 13.5px;
+          padding-left: 16px;
+          border: 1px solid #70c05b;
+          border-radius: 4px;
+          @include mixin.title-4-3;
+
+          &::placeholder {
+            @include mixin.title-4-3;
+          }
+          &:focus-visible {
+            transition: 0.5s;
+            box-shadow: inset 0px 1px 10px black;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+          }
+        }
+      }
+    }
+
+    .nav__right {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      .controlling {
+        .control {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          &.li:first-child {
+            display: none;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 9px;
+            span {
+              @include mixin.title-5;
+            }
+          }
+        }
+      }
+    }
+    .signing {
+      .avatar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        span {
+          @include mixin.title-4;
+        }
+        button {
+          background: transparent;
+          margin-left: 23.5px;
+        }
+      }
+    }
+  }
+  .home {
+    background-image: url("../../assets/images/home/navbar/home/bg.png");
+    background-size: cover;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      .home__left {
+        display: flex;
+      }
+      .home__right {
+        span {
+          @include mixin.title-1;
+        }
+      }
+    }
   }
 }

@@ -1,3 +1,147 @@
-@use '../global';
-@use '../layout/header';
-@use '../layout/footer';
+@use "../global";
+@use "../layout/header";
+@use "../layout/footer";
+@use "../utils/mixin";
+
+main {
+  padding-top: 80px;
+  background: #fbf8ec;
+  .container {
+    .stock {
+      .stock__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          @include mixin.title-2;
+        }
+        button {
+          background: transparent;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          span {
+            @include mixin.title-4;
+          }
+        }
+      }
+      .stock__cards__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .stock__card {
+          background-color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          .stock__card__body {
+            position: relative;
+            display: flex;
+            .like {
+              position: absolute;
+              top: 8px;
+              right: 8px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 32px;
+              height: 32px;
+              border-radius: 4px;
+              background: #f3f2f1;
+              -webkit-border-radius: 4px;
+              -moz-border-radius: 4px;
+              -ms-border-radius: 4px;
+              -o-border-radius: 4px;
+            }
+            .like.active path::after {
+              background: red;
+            }
+            .like.active svg path {
+              fill: red;
+            }
+            .discount {
+              position: absolute;
+              bottom: 10px;
+              left: 10px;
+              padding: 4px 8px;
+              border-radius: 4px;
+              background: #ff6633;
+              -webkit-border-radius: 4px;
+              -moz-border-radius: 4px;
+              -ms-border-radius: 4px;
+              -o-border-radius: 4px;
+              span {
+                @include mixin.title-4-2;
+              }
+            }
+          }
+          .stock__card__footer {
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            .price {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .by__card {
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+                h1 {
+                  @include mixin.title-3;
+                }
+                span {
+                  @include mixin.title-5;
+                }
+              }
+              .by__cash {
+                display: flex;
+                align-items: end;
+                flex-direction: column;
+                h1 {
+                  @include mixin.title-4;
+                }
+                span {
+                  @include mixin.title-5;
+                }
+              }
+            }
+            .about__goods {
+              max-width: 100%;
+              span {
+                max-width: 150px;
+                @include mixin.title-4-4;
+              }
+            }
+          }
+        }
+        .stock__card:nth-child(1) .stock__card__body {
+          width: 272px;
+          height: 160px;
+          background: url("../../assets/images/home/main/stock/cards/1.png");
+          background-size: 100%;
+        }
+        .stock__card:nth-child(2) .stock__card__body {
+          width: 272px;
+          height: 160px;
+          background-image: url("../../assets/images/home/main/stock/cards/2.png");
+          background-size: 100%;
+        }
+        .stock__card:nth-child(3) .stock__card__body {
+          width: 272px;
+          height: 160px;
+          background-image: url("../../assets/images/home/main/stock/cards/3.png");
+          background-size: 100%;
+        }
+        .stock__card:nth-child(4) .stock__card__body {
+          width: 272px;
+          height: 160px;
+          background-image: url("../../assets/images/home/main/stock/cards/4.png");
+          background-size: 100%;
+        }
+      }
+    }
+  }
+}

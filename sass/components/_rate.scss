@@ -1,0 +1,35 @@
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  float: right;
+  color: #ddd;
+  font-size: 24px;
+}
+
+.rating label:before {
+  content: "\2605";
+  padding: 5px;
+}
+
+.rating input:checked ~ label,
+.rating input:checked ~ label ~ label {
+  color: #ffca00;
+  animation: shooting-stars 1s;
+}
+
+@keyframes shooting-stars {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100px, -200px);
+    opacity: 0;
+  }
+}

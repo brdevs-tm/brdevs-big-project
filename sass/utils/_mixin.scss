@@ -41,7 +41,7 @@
 }
 
 @mixin nav-btn {
-  @include primary-btn(20px 48px);
+  @include btn;
 }
 
 @mixin title($font, $weight, $size, $height, $color: var.$black) {
@@ -66,6 +66,15 @@
 
 @mixin title-4 {
   @include title("Rubik", 400, var.$h4, 150%, var.$grayscale-hardest);
+}
+@mixin title-4-2 {
+  @include title("Rubik", 400, var.$h4, 150%, var.$white);
+}
+@mixin title-4-3 {
+  @include title("Rubik", 400, var.$h4, 150%, var.$grayscale-hard);
+}
+@mixin title-4-4 {
+  @include title("Rubik", 400, var.$h4, 150%, var.$black);
 }
 
 @mixin title-5 {
